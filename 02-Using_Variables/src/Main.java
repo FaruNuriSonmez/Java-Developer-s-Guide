@@ -1,11 +1,14 @@
+import java.util.Locale;
+
 public class Main {
 
     public static void main(String[] args) {
-        StringDataType();
-        BasicDataTypes();
+        stringDataType();
+        basicDataTypes();
+        stringsExamples();
     }
 
-    public static void StringDataType() {
+    public static void stringDataType() {
         String text = "Hello";
 
         String blank = " ";
@@ -19,7 +22,7 @@ public class Main {
         System.out.println("Hello " + "Java!");
     }
 
-    public static void BasicDataTypes() {
+    public static void basicDataTypes() {
         int myNumber = 12;
         short myShort = 38;
         long myLong = 3838;
@@ -40,5 +43,37 @@ public class Main {
         System.out.println(myChar);
         System.out.println(myBoolean);
         System.out.println(myByte);
+    }
+
+    public static void stringsExamples(){
+        String msj = "Hello Java";
+
+        System.out.println("Character Length: " + msj.length());
+        System.out.println("5th Character : " + msj.charAt(4));
+        System.out.println(msj.concat("!"));
+        System.out.println(msj);
+        System.out.println(msj.startsWith("H"));
+        System.out.println(msj.endsWith("a"));
+
+        char[] msj1 = new char[5];
+        msj.getChars(0,5, msj1, 0);
+        System.out.println(msj1);
+
+        System.out.println(msj.indexOf("e"));
+        System.out.println(msj.lastIndexOf("e"));
+
+        System.out.println(msj.replace("Hello","Hi"));
+
+        System.out.println(msj.substring(6));
+        System.out.println(msj.substring(6,10));
+
+        for (String character:msj.split(" ")){
+            System.out.println(character);
+        }
+
+        System.out.println(msj.toLowerCase(Locale.ROOT));
+        System.out.println(msj.toUpperCase(Locale.ROOT));
+
+        System.out.println(msj.trim());
     }
 }
