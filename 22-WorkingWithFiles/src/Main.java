@@ -1,15 +1,15 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         File file = new File("/Users/farunurisonmez/Desktop/students.txt");
+
         createFile(file);
         readingFileInfo(file);
         readingFile(file);
+        writeFile(file);
     }
 
     public static void createFile(File file){
@@ -45,6 +45,21 @@ public class Main {
             reader.close();
         }
         catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeFile(File file){
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+            writer.newLine();
+            writer.write("10");
+            System.out.println("File Writer");
+            writer.close();
+        }
+        catch (FileNotFoundException e){
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
