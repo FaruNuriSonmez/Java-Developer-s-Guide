@@ -8,7 +8,8 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 	  
-	<bean id="database" class="applicationSpring.MsSqlCustomerDal">
-	
+	<bean id="database" class="applicationSpring.MsSqlCustomerDal"></bean>
+	<bean id="service" class="applicationSpring.CustomerManager">
+		<constructor-arg ref="database"/>
 	</bean>
 </beans>

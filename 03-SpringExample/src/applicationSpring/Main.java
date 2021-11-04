@@ -9,8 +9,9 @@ public class Main {
 	    ClassPathXmlApplicationContext context = 
 		    new ClassPathXmlApplicationContext("applicationContext.xml");
 	    
-		CustomerManager customerManager = new CustomerManager(context.getBean("database",ICustomerDal.class));
-		customerManager.add();
+	    ICustomerService customerService = 
+		    context.getBean("service",ICustomerService.class);
+	    
+	    customerService.add();
 	}
-
 }
