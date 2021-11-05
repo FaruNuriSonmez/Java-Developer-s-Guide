@@ -20,12 +20,16 @@ public class Main {
 	try {
 	    session.beginTransaction();
 	    
-	    // Select * from city
-	    List<City> cities = session.createQuery("from City").getResultList();
+	    // from city (Select * from city)
+	    // from City c where c.countryCode='TUR' AND district='Ankara'
+	    // from City c where c.name LIKE '%kar%'
+	    
+	    List<City> cities = session.createQuery("from City c where c.name LIKE '%kar%'").getResultList();
 	    
 	    for(City city:cities) {
 		System.out.println(city.getName());
 	    }
+	    
 	    session.getTransaction().commit();
 	}
 	finally {
