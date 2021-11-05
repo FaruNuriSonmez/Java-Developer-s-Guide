@@ -26,8 +26,10 @@ public class Main {
 	    // from City c where c.name LIKE '%kar%'
 	    // from City c ORDER BY name
 	    
-	    //getQuery(session);
-	    add(session);
+	    //get(session);
+	    //add(session);
+	    //update(session);
+	    delete(session);
 	    
 	}
 	finally {
@@ -35,7 +37,7 @@ public class Main {
 	}
     }
     
-    public static void getQuery(Session session) {
+    public static void get(Session session) {
 	
 	List<City> cities = session.createQuery("from City c ORDER BY name").getResultList();
 	    
@@ -58,6 +60,27 @@ public class Main {
 	session.getTransaction().commit();
 	
 	System.out.println("City Added.");
+    }
+    
+    public static void update(Session session) {
+	City city = session.get(City.class, 4095);
+	
+	city.setPopulation(2000);
+	
+	session.save(city);
+	
+	session.getTransaction().commit();
+	
+	System.out.println("City Updated.");
+    }
+    
+    public static void delete(Session session) {
+	City city = session.get(City.class, 4095);
+	session.delete(city);
+	
+	session.getTransaction().commit();
+	
+	System.out.println("City Deleted.");
     }
 
 }
