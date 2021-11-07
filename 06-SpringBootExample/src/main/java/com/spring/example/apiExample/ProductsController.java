@@ -13,6 +13,6 @@ public class ProductsController {
     
     @GetMapping("/products")
     public String get2() {
-	return "Laptop2";
+	return "Laptop3";
     }
 }
