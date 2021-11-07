@@ -31,6 +31,8 @@ public class City {
 	this.population = population;
     }
     
+    public City() {}
+    
     public int getId() {
 	return id;
     }
