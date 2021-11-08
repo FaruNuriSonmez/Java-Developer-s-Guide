@@ -13,7 +13,7 @@ public class City {
     @Column(name="name")
     private String name;
     
-    @Column(name="countryCode")
+    @Column(name="countrycode")
     private String countryCode;
     
     @Column(name="district")

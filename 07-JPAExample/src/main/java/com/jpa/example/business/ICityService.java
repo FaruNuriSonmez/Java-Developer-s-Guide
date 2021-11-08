@@ -2,8 +2,6 @@ package com.jpa.example.business;
 
 import java.util.List;
 
-import java.util.List;
-
 import com.jpa.example.entites.City;
 
 public interface ICityService {
@@ -11,4 +9,5 @@ public interface ICityService {
     void add(City city);
     void update(City city);
     void delete(City city);
+    City getById(int id);
 }

@@ -28,20 +28,22 @@ public class CityManager implements ICityService {
 
     @Override
     public void add(City city) {
-	// TODO Auto-generated method stub
-	
+	this.cityDal.add(city);
     }
 
     @Override
     public void update(City city) {
-	// TODO Auto-generated method stub
-	
+	this.cityDal.update(city);
     }
 
     @Override
     public void delete(City city) {
-	// TODO Auto-generated method stub
-	
+	this.cityDal.delete(city);
+    }
+
+    @Override
+    public City getById(int id) {
+	return this.cityDal.getById(id);
     }
 
 }
